@@ -1,0 +1,32 @@
+<div class="form-header">
+
+    <input #myInput type="text" 
+           placeholder="phone number"
+           (keyup.enter)="checkNumber(myInput.value)"  />
+
+    <button (click)="checkNumber(myInput.value)" >
+        Check
+    </button>
+
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Number</th>
+      <th scope="col">Valid</th>
+      <th scope="col">Country Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let temp of phoneNumbers">
+      <th scope="row">{{temp.id}}</th>
+      <td>{{temp.number}}</td>
+      <td>{{temp.valid}}</td>
+      <td>{{temp.country_name}}</td>
+    </tr>
+   
+    
+  </tbody>
+</table>
